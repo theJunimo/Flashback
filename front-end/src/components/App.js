@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'; 
-import { LoginPage, EntryPage, MainPage, NewAlbumPage, SettingsPage } from 'pages';
+import { LoginPage, EntryPage, MainPage, NewAlbumPage, SettingsPage, ProfilePage } from 'pages';
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
         <Route exact path = "/main" component = { MainPage } />
         <Route exact path = '/new-album' component = { NewAlbumPage } />
         <Route exact path = '/settings' component = { SettingsPage } />
+        <Route exact path = '/profile' component = { ProfilePage } />
       </Switch>
     </div>
   )

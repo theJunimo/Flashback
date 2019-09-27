@@ -1,0 +1,30 @@
+.MarkedTitle {
+    h1{
+        text-align: center;
+        margin-top: 0;
+        .mark{
+            display: inline-block;
+            padding: 0 5rem;
+            border-radius: 5px;
+            transform: rotate(-2deg);
+            position: relative;
+            left: calc(var(--rounded) * -1);
+            color: #222;
+            background-color: #f6f398;
+
+            &.blue{
+                background-color: #c7fcff;
+            }
+
+            &.pink {
+                background-color: #ffacae;
+            }
+
+            .header {
+                position: relative;
+                display: inline-block;
+                transform: rotate(2deg);
+            }
+        }
+    }
+}

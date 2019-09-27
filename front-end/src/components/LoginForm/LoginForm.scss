@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+
+.LoginForm {
+    margin: auto;
+    width: 22rem;
+
+    h1 {
+        font-size: 4rem;
+        font-family: 'Bungee Shade', cursive;
+        text-align: center;
+        color:  black;
+        margin: 0;
+    }
+
+    form {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        margin-top: 3rem;
+
+        .form-group {
+            width: 18rem;
+            margin: auto;
+
+            label {
+                font-weight: 600;
+            }
+
+            .input-wrapper {
+                margin-top: 3px;
+                padding: 5px;
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: white;
+
+                input {
+                    width: 100%;
+                    font-size: 1rem;
+                    outline: none;
+                    border: none;
+                    text-align: center;
+                }
+            }
+
+            &.mt-1 {
+                margin-top: 1rem;
+            }
+        }
+
+        .submitButton {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            margin-top: 3rem;
+            padding: 0.5rem 1rem;
+            background-color: rgb(131, 255, 205);
+            box-shadow: 4px 4px 0 #222;
+            border: 2px solid black;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: white;
+                box-shadow: 2px 2px 0 #222;
+            }
+        }
+    }
+}
