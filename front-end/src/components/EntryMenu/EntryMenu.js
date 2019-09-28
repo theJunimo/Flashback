@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './EntryMenu.scss';
 import classNames from 'classnames/bind';
 import LinkButton from 'components/common/LinkButton';
-
 const cx = classNames.bind(styles);
 
 
@@ -11,7 +10,9 @@ const AlbumList = ({albumList = ['👸🏻노답네자매👸🏻', '👨‍👩
     const list = albumList.map((el, idx) => <li key = {idx}>{el} →</li>)
     return (
         <ul>
-            {list}
+            <Link to = '/album'>
+                {list}
+            </Link>
         </ul>
     )
 }

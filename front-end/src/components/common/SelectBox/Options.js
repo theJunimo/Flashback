@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const Options = ({ albumList, selected, onSelect }) => {
-    const list = albumList.map((el, idx) => {
+const Options = ({ optionList, selected, onSelect }) => {
+    const list = optionList.map((el, idx) => {
         return el === selected? 
         null
         : 

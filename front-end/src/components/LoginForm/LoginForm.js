@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './LoginForm.scss';
 import classNames from 'classnames/bind';
+import Button from 'components/common/Button';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 const LoginForm = () => {
+
     return(
         <div className = { cx('LoginForm') }>
             <h1>FLASH<br/>BACK</h1>
@@ -30,9 +32,9 @@ const LoginForm = () => {
                             type = 'password'  />
                     </div>
                 </div>
-                <div className = { cx('submitButton') }>
-                    <Link to = '/entry'><span>Login</span></Link>
-                </div>
+                <Link to = '/entry'>
+                <Button>Login</Button>
+                </Link>
             </form>
         </div>
     )

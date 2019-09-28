@@ -2,7 +2,7 @@
 .Options {
     position: fixed;
     width: inherit;
-    background-color: white;
+    background-color: transparent;
     -webkit-animation: fadein 0.6s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.6s; /* Firefox < 16 */
      -ms-animation: fadein 0.6s; /* Internet Explorer */
@@ -11,11 +11,12 @@
 
     ul {
         border: 2px solid black;
-        border-radius: 3px;
+        border-radius: 5px;
         overflow: hidden;
+        background-color: white;
         
         li {
-            padding: 8px 10px;
+            padding: 6px 10px;
             text-align: center;
             font-weight: normal;
             cursor: pointer;

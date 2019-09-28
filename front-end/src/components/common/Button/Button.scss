@@ -5,7 +5,7 @@
     justify-content: center;
     margin: auto;
     margin-top: 3rem;
-    padding: 0.5rem 1rem;
+    padding: 8px 10px;
     background-color: #83ffcd;
     box-shadow: 4px 4px 0 #222;
     border: 2px solid black;
@@ -41,6 +41,25 @@
         &:hover{
             box-shadow: 2px 2px 0;
         }
+    }
+
+    &.date-btn {
+        margin-top: 0;
+        background-color: white;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        width:initial;
+        margin: auto 0;
+        box-shadow: none;
+
+        &.selected {
+            background-color: white;
+        }
+    }
+
+    &.width-init {
+        width:initial;
+        margin: auto 0;
     }
 
     &.mr-1 {

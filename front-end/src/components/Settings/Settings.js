@@ -15,11 +15,6 @@ function reducer(state, action) {
                 ...state,
                 selectedAlbum: action.data,
             };
-        case 'OPEN_OPTIONS':
-            return {
-                ...state,
-                optionsVisibility: !state.optionsVisibility
-            };
         case 'OPEN_MODAL':
             console.log('모달열기');
             return {
@@ -41,7 +36,6 @@ const Settings = ({albumList = ['👸🏻노답네자매👸🏻', '👨‍👩�
         reducer,
         {
             selectedAlbum: '',
-            optionsVisibility: false,
             modalVisibility: false
         }
     )
@@ -54,12 +48,12 @@ const Settings = ({albumList = ['👸🏻노답네자매👸🏻', '👨‍👩�
                     visible = { modalVisibility }
                     onClose = { () => dispatch({ type: 'CLOSE_MODAL' }) } />}
             <MarkedTitle>Settings</MarkedTitle>
-            <SelectBox 
+            <SelectBox  
+                name = '앨범 선택하기'
                 selected = { selectedAlbum } 
-                visible = { optionsVisibility } 
                 onOpen = { () => dispatch({ type: 'OPEN_OPTIONS' }) }
                 onSelect = { (album) => dispatch({ type: 'SELECT_ALBUM', data: album }) }
-                albumList = { albumList }
+                optionList = { albumList }
                         />
             {selectedAlbum && 
                 <SettingsForm

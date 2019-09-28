@@ -1,10 +1,15 @@
 .SelectBox {
     display: flex;
     flex-direction: column;
-
+    font-weight: 600;
+    
     .inner-wrapper {
         margin: auto;
         width: 14rem;
+
+        &.width-sm {
+            width: 8rem;
+        }
 
         .selected-wrapper{
             display: flex;

@@ -3,6 +3,11 @@
     position: absolute;
     z-index: 1;
     
+    &.block {
+        position: initial;
+        margin-left: auto;
+    }
+
     .img-wrapper{
         display: flex;
         cursor: pointer;
