@@ -1,0 +1,64 @@
+.Photo {
+    position: relative;
+    width: 32%;
+    max-height: 25rem;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    .img-wrapper{
+        width: 100%;
+        background-color: black;
+        img {
+            width: 100%;
+        }
+    }
+
+    .cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .date {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .photo-title {
+            margin: auto;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .user-profile {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30%;
+            
+            .img-wrap {
+                width: 55px;
+                height: 55px;
+                margin: auto;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .userName {
+                color: white;
+                margin: auto;
+                font-weight: bold;
+            }
+        }
+    }
+}

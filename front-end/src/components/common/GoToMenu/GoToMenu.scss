@@ -1,0 +1,32 @@
+
+.GoToMenu {
+    position: absolute;
+    z-index: 1;
+    
+    &.block {
+        position: initial;
+        margin-left: auto;
+    }
+
+    .img-wrapper{
+        display: flex;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid black;
+        padding: 5px 10px;
+        font-weight: 600;
+        background-color: #fdf4a7;
+        color: #de5be6;
+
+        &:hover {
+            animation: wiggle 0.5s infinite;
+        }
+
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            40% { transform: rotate(-5deg); }
+          80% { transform: rotate(5deg); }
+          100% { transform: rotate(2deg); }
+        }
+    }
+}

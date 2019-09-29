@@ -1,0 +1,36 @@
+.ContentWrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    .prevBtn {
+        width: 4rem;
+        display: flex;
+        img {
+            margin: auto;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .nextBtn {
+        width: 4rem;
+        display: flex;
+        
+        img {
+            margin: auto;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

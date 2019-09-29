@@ -1,0 +1,26 @@
+
+.TextSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    
+    input {
+        margin-bottom: 1rem;
+        padding: 5px 1rem;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+    }
+
+    textarea {
+        min-height: 8rem;
+        margin-bottom: 1rem;
+        padding: 10px 1rem;
+        border: 2px solid black;
+        font-size: 1rem;
+        overflow-y: auto;
+        resize: none;
+        outline: none;
+    }
+}

@@ -1,0 +1,72 @@
+.CommentBlock {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .commentlist {
+        height: 9rem;
+        overflow-y: scroll;
+        -ms-overflow-style: none; 
+        &::-webkit-scrollbar { 
+          display: none !important;
+        }
+
+        ul li {
+                display: flex;
+                overflow: visible;
+                padding: 7px 0;
+
+                .comment-userImg {
+                    min-width: 35px;
+                    max-width: 35px;
+                    min-height: 35px;
+                    max-height: 35px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 50%;
+                }
+        
+                .comment-userName {
+                    display: flex;
+                    font-size: 0.9375rem;
+                    max-height: 35px;
+                    margin-left: 10px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+
+                    .inner-text {
+                        margin: auto;
+                        white-space: nowrap;
+                    }
+                }
+
+                .comment-text {
+                    font-size: 0.875rem;
+                    margin: auto 0;
+                    margin-left: 10px;
+                }
+            }
+    }
+
+    .commentInput {
+        display: flex;
+        border-top: 1px solid #e8e8e8;
+        padding-top: 10px;
+        background-color: white;
+
+        input {
+            flex: 1;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+        }
+
+        .postBtn {
+            padding: 5px 10px;
+            color: #3897f0;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+}

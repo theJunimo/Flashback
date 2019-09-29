@@ -1,0 +1,18 @@
+
+.DateSection {
+    .date-btn-wrapper{
+        display: flex;
+        margin-bottom: 1rem;
+
+        input {
+            font-size: 1rem;
+            font-weight: 600;
+            color: black;
+            border: none;
+            margin-right: auto;
+        }
+    }
+    .calendar-wrapper {
+        position: fixed;
+    }
+}
