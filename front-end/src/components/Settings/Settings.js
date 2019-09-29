@@ -39,7 +39,7 @@ const Settings = ({albumList = ['👸🏻노답네자매👸🏻', '👨‍👩�
             modalVisibility: false
         }
     )
-    const { selectedAlbum, optionsVisibility, modalVisibility } = state;
+    const { selectedAlbum, modalVisibility } = state;
 
     return(
         <div className = {cx('Settings')}>

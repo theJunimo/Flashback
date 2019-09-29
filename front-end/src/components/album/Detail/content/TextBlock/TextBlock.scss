@@ -1,0 +1,56 @@
+.TextBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+    
+    .user {
+        display: flex;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e8e8e8;
+
+        .userImg {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        span{
+            margin: auto 0;
+            margin-left: 1rem;
+        }
+
+        .moreIcon {
+            margin: auto 0;
+            margin-left: auto;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .date {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        color: gray;
+    }
+
+    .title {
+        margin-top: 3px;
+        font-weight: bold;
+    }
+
+    .text {
+        margin-top: 10px;
+        min-height: 11rem;
+        max-height: 11rem;
+        overflow-y: auto;
+        -ms-overflow-style: none; 
+        &::-webkit-scrollbar { 
+          display: none !important;
+        }
+    }
+
+}

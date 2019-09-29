@@ -21,19 +21,18 @@ const DateSection = () => {
         dateInput.current.value = date;
     },[date]);
 
-
     const onToday = useCallback(() => {
-        setDate(todayStr);
-    });
+        setDate((todayStr) => todayStr);
+    },[]);
 
     const onShowCalendar = useCallback(() => {
         setShowCalendar((showCalendar) => !showCalendar);
-    });
+    },[]);
 
     const onChange = useCallback((date) => {
         setShowCalendar(false);
         setDate(`${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDate()}일`); 
-    });
+    },[]);
 
     return(
         <div className = {cx('DateSection')}>
