@@ -11,23 +11,56 @@
         border-bottom: 1px solid #e8e8e8;
 
         .userImg {
-            width: 40px;
-            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            max-width: 40px;
+            max-height: 40px;
             border-radius: 50%;
             overflow: hidden;
         }
 
-        span{
+        .writerName {
             margin: auto 0;
             margin-left: 1rem;
         }
 
-        .moreIcon {
+        .moreBtn-wrapper {
             margin: auto 0;
-            margin-left: auto;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+            width: 100%;
+
+            .inner {
+                width: 45%;
+                margin-left: auto;
+
+                .img-div{
+                    display: flex;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                        margin-left: auto;
+                        cursor: pointer;    
+                    }
+                }
+                
+                .bubble-wrapper{
+                    position: fixed;
+                    
+                    .bubble{
+                    width: 90px;
+                    padding: 5px;
+                    background: white;
+                    border: 1px solid #e8e8e8;
+                    border-radius: 5px;
+                    text-align: center;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                    cursor: pointer;
+
+                        span {
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -40,10 +73,12 @@
     .title {
         margin-top: 3px;
         font-weight: bold;
+        font-size: 0.9375rem;
     }
 
     .text {
         margin-top: 10px;
+        margin-bottom: 10px;
         min-height: 11rem;
         max-height: 11rem;
         overflow-y: auto;
@@ -51,6 +86,7 @@
         &::-webkit-scrollbar { 
           display: none !important;
         }
+        font-size: 0.9375rem;
     }
 
 }

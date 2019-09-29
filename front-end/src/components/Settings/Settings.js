@@ -3,7 +3,7 @@ import styles from './Settings.scss';
 import classNames from 'classnames/bind';
 import MarkedTitle from 'components/common/MarkedTitle';
 import SelectBox from 'components/common/SelectBox';
-import SettingsModal from './SettingsModal';
+import DeleteModal from 'components/common/DeleteModal';
 import SettingsForm from './SettingsForm';
 
 const cx = classNames.bind(styles);
@@ -44,8 +44,7 @@ const Settings = ({albumList = ['👸🏻노답네자매👸🏻', '👨‍👩�
     return(
         <div className = {cx('Settings')}>
             {modalVisibility &&
-                <SettingsModal
-                    visible = { modalVisibility }
+                <DeleteModal
                     onClose = { () => dispatch({ type: 'CLOSE_MODAL' }) } />}
             <MarkedTitle>Settings</MarkedTitle>
             <SelectBox  
