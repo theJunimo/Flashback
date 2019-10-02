@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Detail.scss';
 import classNames from 'classnames/bind';
 import ContentWrapper from './ContentWrapper';
-import Content from './content/Content';
+import Content from './Content';
 
 const cx = classNames.bind(styles);
 

@@ -4,7 +4,6 @@ import AlbumTemplate from 'components/album/AlbumTemplate';
 const AlbumPage = () => {
     return(
         <AlbumTemplate>
-
         </AlbumTemplate>
     )
 }

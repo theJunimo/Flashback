@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const AlbumTemplate = () => {
     const [showNewPhoto, setShowNewPhoto] = useState(false);
-    const [showDetail, setShowDetail] = useState(true); 
+    const [showDetail, setShowDetail] = useState(false); 
     
     const onShowNewPhoto = useCallback(() => {
         setShowNewPhoto((showNewPhoto) => !showNewPhoto);
@@ -29,7 +29,6 @@ const AlbumTemplate = () => {
             <div className = {cx('content-wrapper')}> 
                 <Header onShowNewPhoto = { onShowNewPhoto }/>
                 <main>
-                    <FilterSection />
                     <PhotoList onShowDetail = { onShowDetail }/>
                 </main>
             </div>

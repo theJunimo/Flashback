@@ -1,8 +1,8 @@
+@import 'styles/util';
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
 
 .LoginForm {
     margin: auto;
-    width: 22rem;
 
     h1 {
         font-size: 4rem;
@@ -47,25 +47,13 @@
             }
         }
 
-        .submitButton {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin: auto;
-            margin-top: 3rem;
-            padding: 0.5rem 1rem;
-            background-color: rgb(131, 255, 205);
-            box-shadow: 4px 4px 0 #222;
-            border: 2px solid black;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-
-            &:hover{
-                background-color: white;
-                box-shadow: 2px 2px 0 #222;
-            }
+        .validMsg {
+            height: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ff0033;
         }
+
     }
 }

@@ -32,12 +32,6 @@ const Photo = ({info, onClick}) => {
                     <div className = {cx('photo-title')}>
                         행복한 내 생일날
                     </div>
-                    <div className = {cx('user-profile')}>
-                        <div className = {cx('img-wrap')}>
-                            <img alt = 'userImg' src = 'Junimo.png'/>
-                        </div>
-                        <span className = {cx('userName')}>Junimo</span>
-                    </div>
                 </div>
             )}
         </div>

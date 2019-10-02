@@ -17,7 +17,7 @@ const Button = ({type, children, onClick}) => {
     },[]);
 
     return(
-        <div ref = { buttonEl } 
+        <div ref = { buttonEl }
             className = { cx('Button ' + (type))}  
             onClick = { onClick }
             onMouseEnter = { children === 'DELETE' || children === 'LEAVE'? onHover : null} 
