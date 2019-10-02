@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => (
         },
         profile: {
             type: DataTypes.STRING(100)
+        },
+        rate: {
+            type: DataTypes.STRING(20),
+            defaultValue: 'USER'
         }
     }, {
             timestamps: true,

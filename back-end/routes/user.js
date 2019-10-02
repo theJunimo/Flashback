@@ -17,14 +17,21 @@ const wrap = asyncFn => {
 router.post('/auth', wrap(async(req,res,next)=> {
   const { id, password } = req.body;
   try{
-  
     const exUser = await User.findOne({where: {id}});
-  
     if(exUser) {
-      if(exUser.password === password) return res.status(200).send();
-      return res.status(401).send({msg: '비밀번호가 틀렸습니다.'});
+      if(exUser.password === password) {
+        res.cookie('id', exUser.id);
+        return res.status(200).send(
+          {
+            id: exUser.id, 
+            profile: exUser.profile,
+            nick: exUser.nick,
+            rate: exUser.rate,
+          });
+      }
+      return res.status(401).send();
     } else {
-      return res.status(401).send({msg: '존재하지 않는 아이디 입니다.'});
+      return res.status(401).send();
     }
   } catch (e) {
     console.log(e);

@@ -1,27 +1,19 @@
+@import 'styles/util';
+
 .Template {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
     display: flex;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //background-color: rgba(0, 0, 0, 0.5);
-    background-image: url('https://cdn.glitch.com/d16f4999-117f-4e10-9537-52d01446f990%2Fbackground.svg?v=1567339224383');
-    background-size: cover;
-    background-position: center;
 
     .block {
         display: flex;
         flex-direction: column;
-        min-width: 28rem;
-        min-height: 41rem;
-        padding: 1rem;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 10px;
-        border: 2px solid black;
+        margin: auto;
     }
 
 }

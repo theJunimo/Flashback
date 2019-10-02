@@ -1,0 +1,16 @@
+.Content {
+    flex: 1;
+    display: flex;
+    background-color: white;
+    height: 33rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+    .photo-block {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

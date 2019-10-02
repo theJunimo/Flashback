@@ -6,15 +6,27 @@ import Emoji from 'components/common/Emoji';
 
 const cx = classNames.bind(styles);
 
-const LinkButton = ({ emoji, to, children }) => {
-    return(
-        <div className = { cx('LinkButton') }>
+const LinkButton = ({ emoji, to, onClick, children }) => {
+    const El = () => {
+        return to? (
             <Link to = { to }>
                 <span>
                     { emoji && <Emoji emoji = { emoji }/> }
                     { children }
                 </span>
             </Link>
+        ) : (
+            <div onClick = { onClick }>
+                <span >
+                    { emoji && <Emoji emoji = { emoji }/> }
+                    { children }
+                </span>
+            </div>
+        )
+    }
+    return(
+        <div className = { cx('LinkButton') }>
+            <El/>
         </div>
     )
 }

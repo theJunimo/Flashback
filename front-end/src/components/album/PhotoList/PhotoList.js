@@ -14,12 +14,14 @@ const PhotoList = ({onShowDetail, photoList = [ {src : 'https://images.unsplash.
 {src : 'https://images.unsplash.com/photo-1569524872948-0ba4d096f997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'},
 {src : 'https://images.unsplash.com/photo-1569363750132-b79584ecfeed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'},
 {src : 'https://images.unsplash.com/photo-1569556666948-cf63b49f52fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'},]}) => {
-    const list = photoList.map((el, idx) => (
+    
+const list = photoList.map((el, idx) => (
         <Photo key = {idx} info = {el} onClick = { onShowDetail }/>
     ))
+    
     return(
         <div className = {cx('PhotoList')}>
-            {list}
+
         </div>
     )
 }
