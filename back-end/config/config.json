@@ -1,9 +1,0 @@
-{
-    "development": {
-        "username": "root",
-        "password": "flashback-key-2375",
-        "database": "flashback",
-        "host": "35.188.120.125",
-        "dialect": "mysql"
-    }
-}
