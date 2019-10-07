@@ -1,0 +1,27 @@
+
+.TagList{
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.6rem;
+        align-content: space-between;
+
+        li {
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: #212529;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            margin-right: 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover{
+                font-weight: bold;
+                color: black;
+            }
+        }
+    }
+}

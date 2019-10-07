@@ -1,0 +1,12 @@
+@import 'styles/utils';
+
+.Template {
+    display: flex;
+    flex-direction: column;
+
+    main {
+        margin: 0 auto;
+        width: $uni-width;
+        //border: 1px solid black;
+    }
+}

@@ -1,0 +1,41 @@
+
+.Footer {
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    
+    .inner{
+        margin: auto;
+
+        .contact {
+            display: flex;
+            margin: 0 auto;
+            width: 12rem;
+            justify-content: space-between;
+
+            a{
+                .inner{
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 0;
+            margin-top: 1.5rem;
+        }
+    }
+}
