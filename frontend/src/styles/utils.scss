@@ -1,6 +1,12 @@
+@import '~include-media/dist/include-media';
 
 $uni-width: 75rem;
 
-$uni-width-medium: 90%;
+$uni-width-small: 80%;
+
+$uni-width-large: 90%;
 
 $uni-width-full: 100%;
+
+/*반응형 디자인 시 참조할 구간*/
+$breakpoints: (small: 576px, medium: 855px, large: 1225px, wide: 1400px);

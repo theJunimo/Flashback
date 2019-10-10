@@ -8,5 +8,13 @@
         margin: 0 auto;
         width: $uni-width;
         //border: 1px solid black;
+
+        @include media("<=large") {
+            width: $uni-width-large;
+        }
+
+        @include media("<=small") {
+           width: $uni-width-small;
+        }
     }
 }

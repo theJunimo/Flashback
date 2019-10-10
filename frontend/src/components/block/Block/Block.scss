@@ -1,3 +1,4 @@
+@import 'styles/utils';
 
 .Block {
     display: flex;
@@ -9,6 +10,21 @@
     border-radius: 10px;
     padding: 1rem;
     cursor: pointer;
+
+    @include media("<1225px") {
+        min-width: 32%;
+        max-width: 32%;
+    }
+
+    @include media("<=medium") {
+        min-width: 48%;
+        max-width: 48%;
+    }
+
+    @include media("<=small") {
+        min-width: 100%;
+        max-width: 100%;
+    }
 
     &:hover, &:active {
         box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);

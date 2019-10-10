@@ -3,6 +3,16 @@
 .Header {
     display: flex;
     width: $uni-width;
+
+    @include media("<=large") {
+        width: $uni-width-large;
+    }
+
+    @include media("<=small") {
+        width: $uni-width-small;
+        flex-wrap: wrap;
+     }
+
     padding: 2rem 0;
     margin: auto;
 
