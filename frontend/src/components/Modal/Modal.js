@@ -6,15 +6,16 @@ import { closeModal } from 'modules/copy';
 
 const cx = classNames.bind(styles);
 
-const Modal = ({ type = 'fail' }) => {
+const Modal = () => {
   const dispatch = useDispatch();
   const msg = useSelector(({copy}) => { return copy.msg });
+  const modal = useSelector(({copy}) => { return copy.modal });
   const onClose = useCallback(() => {
     dispatch(closeModal());
   }, [dispatch]);
 
   return (
-    <div className={cx('Modal ' + type)}>
+    <div className={cx('Modal ' + (modal? 'movedown' : 'hidden'))}>
       { msg }
       <div className={cx('close')} onClick={() => onClose()} />
     </div>

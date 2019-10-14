@@ -11,7 +11,6 @@ const TagList = ({ tagList }) => {
   const dispatch = useDispatch();
   
   const onSearch = useCallback((tagName) => {
-    window.evnet.stopPropagation();
     dispatch(getEmoticonsByTag(tagName));
   }, [dispatch]);
 
@@ -34,7 +33,8 @@ const TagList = ({ tagList }) => {
       <li
         key={idx}
         style={style}
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           onSearch(tagName)
         }}
       >

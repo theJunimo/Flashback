@@ -2,15 +2,22 @@
 .Modal {
     position: fixed;
     display: flex;
+    background-color: #96f2d7;
     top: 0;
     left: 50%; 
     margin-top: 2rem;
     transform: translateX(-50%);
     padding: 10px 1rem;
-    animation: movedown 9s linear forwards;
     border-radius: 5px;
     opacity: 0;
 
+    &.hidden {
+        display: none;
+    }
+    
+    &.movedown {
+    animation: movedown 9s linear forwards;
+    
     @keyframes movedown {
         0% {
             opacity: 1;
@@ -30,14 +37,7 @@
         }
     }
 
-    &.success {
-        background-color: #96f2d7;
     }
-
-    &.fail {
-        background-color: #ffc9c9;
-    }
-
 
     .close {
         height: 100%;

@@ -1,0 +1,24 @@
+
+.AddButton {
+    position: fixed;
+    display: flex;
+    border-radius: 50%;
+    background-color: white;
+    bottom: 10%;
+    right: 10%;
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #e8e8e8;
+    box-shadow: 2px 4px 4px #e8e8e8;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    img {
+        margin: auto;
+        width: 55%;
+        height: 55%;
+    }
+}

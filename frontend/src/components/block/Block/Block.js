@@ -1,16 +1,15 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import styles from './Block.scss';
 import classNames from 'classnames/bind';
 import TagList from 'components/block/TagList';
+import BestMark from 'components/block/BestMark';
 import { useDispatch } from 'react-redux';
 import { showModal, increaseCopyCnt } from 'modules/copy';
 
 const cx = classNames.bind(styles);
 
-const Block = ({ data }) => {
+const Block = ({ best, data }) => {
   const dispatch = useDispatch();
-  const [emoticon, setEmoticon] = useState(data.text);
-
   const onCopy = useCallback(() => {
     try {
     const el = document.createElement('textarea');
@@ -33,15 +32,16 @@ const Block = ({ data }) => {
       dispatch(showModal('복사 실패 ◟꒰◍´Д‵◍꒱◞'));
     }
 
-  }, [dispatch]);
+  }, [dispatch, data]);
 
   return (
-    <article className={cx('Block')} onClick={onCopy}>
+    <li className={cx('Block')} onClick={onCopy}>
+      {best && <BestMark/>}
       <header className={cx('emoticon')}>
         <span>{data.emoticon}</span>
       </header>
       <TagList tagList={data.tag} />
-    </article>
+    </li>
   );
 };
 
