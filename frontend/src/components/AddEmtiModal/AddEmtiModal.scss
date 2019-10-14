@@ -1,0 +1,146 @@
+@import 'styles/utils';
+
+.AddEmtiModal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3rem;
+    border: 3px solid black;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.6rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .contentWrapper{
+    width: 18rem;
+
+    .emtiInput {
+        font-size: 0.9rem;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #e8e8e8;
+        width: 17rem;
+        outline: none;
+    }
+
+    .tagInput {
+      display: flex;
+      border-radius: 5px;
+      margin-top: 1rem;
+      border: 1px solid #e8e8e8;
+      width: 17rem;
+      outline: none;
+      overflow: hidden;
+
+      .hashTag {
+          margin: auto;
+      }
+
+      input {
+          font-size: 0.9rem;
+          border: none;
+          outline: none;
+      }
+
+      .tagAddBtn {
+          font-size: 0.8rem;
+          padding: 8px;
+          margin-left: auto;
+          background-color: aquamarine;
+          color: black;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+      }
+    }
+
+    .tagList {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: #212529;
+        font-size: 0.85rem;
+        margin-top: 10px;
+        margin-right: 6px;
+
+        .tagName {
+          margin: auto;
+        }
+
+        .deleteIcon {
+          margin: auto;
+          margin-left: 6px;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .li-wrapper {
+      position: relative;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      font-size: 0.8rem;
+      width: 100%;
+
+
+      li:before {
+          position: absolute;
+          left: 0;
+          display: inline-block;
+          content: "•";
+          color: aquamarine;
+      }
+  }
+
+    .options {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .btn {
+      width: 8rem;
+      padding: 5px 0;
+      text-align: center;
+      border-radius: 5px;
+      font-weight: 900;
+      cursor: pointer;
+      border: 2px solid black;
+      box-shadow: 4px 4px 0 #222;
+
+      &:hover {
+        box-shadow: 2px 2px 0 #222;
+      }
+
+      &.confirm {
+        background-color: aquamarine;
+      }
+
+      &.cancel {
+        background-color: white;
+      }
+    }
+  }
+}

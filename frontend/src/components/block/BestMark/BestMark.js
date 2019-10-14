@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 const BestMark = () => {
     return(
         <div className = {cx('BestMark')}>
-            <span>❤︎BEST❤︎</span>
+            <span>❤︎BEST❤</span>
         </div>
     )
 }
