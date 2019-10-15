@@ -1,5 +1,5 @@
 
-.BestMark {
+.NoticeMark {
     position: absolute;
     right: 0.5rem;
     top: 0;
@@ -9,7 +9,7 @@
     padding: 3px;
     margin: 5px;
     letter-spacing: 1px;
-    animation: blink 1s infinite
+    animation: blink 1.5s infinite
 }
 
 @keyframes blink {

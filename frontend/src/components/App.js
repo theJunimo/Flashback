@@ -5,7 +5,7 @@ import BlockListWrapper from 'components/block/BlockListWrapper';
 const App = () => {
   return (
       <Template>
-
+        <BlockListWrapper/>
       </Template>
   );
 };

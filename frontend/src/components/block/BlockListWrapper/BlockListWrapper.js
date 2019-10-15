@@ -9,13 +9,14 @@ import { getAllEmoticons } from 'modules/base';
 const cx = classNames.bind(styles);
 
 const BlockListWrapper = () => {
+  const status = useSelector(({ base }) => base.status);
   const list = useSelector(({ base }) => {
     return base.list;
   });
   const loading = useSelector(({ loading }) => {
-    if (loading.GET_EMOTICONS_ASYNC) return loading.GET_EMOTICONS_ASYNC;
-    if (loading.GET_EMOTICONS_BY_TAG_ASYNC)
-      return loading.GET_EMOTICONS_BY_TAG_ASYNC;
+    if (loading.GET_EMOTICONS_ASYNC || loading.POST_NEW_EMOTICON_ASYNC)
+      return true;
+    if (loading.GET_EMOTICONS_BY_TAG_ASYNC) return true;
   });
   const dispatch = useDispatch();
 
@@ -23,7 +24,21 @@ const BlockListWrapper = () => {
     dispatch(getAllEmoticons());
   }, [dispatch]);
 
-  const blocks = list.map((el, idx) => (<Block key={idx} data={el} best = {idx <= 2? true : false}/>))
+  const blocks = list.map((el, idx) => (
+    <Block
+      key={idx}
+      data={el}
+      notice={
+        status === 'main' && idx <= 2
+          ? '❤︎BEST❤︎'
+          : status === 'new'
+          ? '등록완료!'
+          : status === 'already exist'
+          ? '이미 있어요!'
+          : false
+      }
+    />
+  ));
 
   return (
     <ul className={cx('BlockListWrapper')}>
@@ -38,4 +53,4 @@ const BlockListWrapper = () => {
   );
 };
 
-export default BlockListWrapper;
+export default React.memo(BlockListWrapper);

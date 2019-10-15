@@ -10,14 +10,15 @@ import { useSelector } from 'react-redux';
 const cx = classNames.bind(styles);
 
 const Template = ({ children }) => {
-  const showAddModal = useSelector(({ base }) => {
-    return base.showAddModal;
+  const addModalVisible = useSelector(({ base }) => {
+    return base.addModalVisible;
   });
+  const copyModalVisible = useSelector(({ copy }) => copy.copyModalVisible);
 
   return (
     <div className={cx('Template')}>
-      {showAddModal && <AddEmtiModal/>}
-      <CopyModal />
+      {addModalVisible && <AddEmtiModal />}
+      {copyModalVisible && <CopyModal />}
       <Header />
       <main>{children}</main>
       <Footer />

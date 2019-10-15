@@ -1,21 +1,25 @@
-import React, { useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import styles from './CopyModal.scss';
 import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeModal } from 'modules/copy';
+import { closeCopyModal } from 'modules/copy';
 
 const cx = classNames.bind(styles);
 
 const CopyModal = () => {
   const dispatch = useDispatch();
-  const msg = useSelector(({copy}) => { return copy.msg });
-  const modal = useSelector(({copy}) => { return copy.modal });
+  const msg = useSelector(({copy}) => copy.msg);
+
   const onClose = useCallback(() => {
-    dispatch(closeModal());
-  }, [dispatch]);
+    dispatch(closeCopyModal());
+  }, [dispatch]); 
+
+  useEffect(() => {
+
+  }, []);
 
   return (
-    <div className={cx('CopyModal ' + (modal? 'movedown' : 'hidden'))}>
+    <div className={cx('CopyModal movedown')}>
       { msg }
       <div className={cx('close')} onClick={() => onClose()} />
     </div>

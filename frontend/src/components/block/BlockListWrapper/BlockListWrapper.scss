@@ -3,4 +3,9 @@
 .BlockListWrapper {
     display: flex;
     flex-wrap: wrap;
+
+    @include media("<=large") {
+        justify-content: space-between;
+    }
+
 }

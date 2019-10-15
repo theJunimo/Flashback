@@ -7,30 +7,34 @@ import { getEmoticonsByTag } from 'modules/base';
 const cx = classNames.bind(styles);
 
 const SearchBox = () => {
-  const inputEl = useRef(null);
+  const searchBoxEl = useRef(null);
   const [keyword, setKeyword] = useState('');
   const dispatch = useDispatch();
 
   const onSearch = useCallback(
-    tagName => {
-      dispatch(getEmoticonsByTag(tagName));
+    () => {
+      if(keyword){
+        dispatch(getEmoticonsByTag(keyword));
+        searchBoxEl.current.value = '';
+        setKeyword('');
+      }
     },
-    [dispatch]
+    [dispatch, keyword]
   );
 
   useEffect(() => {
     const handleUserKeyPress = e => {
       const { keyCode } = e;
 
-      if (keyCode === 13) {
-        onSearch(keyword);
+      if (keyCode === 13 && keyword) {
+        onSearch();
       }
     };
-
-    window.addEventListener('keydown', handleUserKeyPress);
+    const copiedEl = searchBoxEl.current;
+    copiedEl.addEventListener('keydown', handleUserKeyPress);
 
     return () => {
-      window.removeEventListener('keydown', handleUserKeyPress);
+      copiedEl.removeEventListener('keydown', handleUserKeyPress);
     };
   }, [onSearch, keyword]);
 
@@ -38,11 +42,11 @@ const SearchBox = () => {
     <div className={cx('SearchBox')}>
       <input
         type="text"
-        ref={inputEl}
-        onChange={() => setKeyword(inputEl.current.value)}
+        ref={searchBoxEl}
+        onChange={() => setKeyword(searchBoxEl.current.value)}
       />
       <div className={cx('search-btn')}>
-        <div className={cx('search-icon')} onClick={() => onSearch(keyword)}>
+        <div className={cx('search-icon')} onClick={ onSearch }>
           <svg
             focusable="false"
             xmlns="http://www.w3.org/2000/svg"

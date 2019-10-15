@@ -4,23 +4,23 @@
     position: relative;
     margin-top: 1.5rem;
     margin-right: 1.5rem;
-    min-width: 17.5rem;
-    max-width: 17.5rem;
+    min-width: 17.6rem;
+    max-width: 17.6rem;
     border: 1px solid #e8e8e8;
     border-radius: 10px;
     padding: 1rem;
     cursor: pointer;
 
-    @include media (">1225px") {
+    @include media (">large") {
         &:nth-child(4n) {
             margin-right: 0;
         }
     }
 
-    @include media("<1225px") {
-        min-width: 30%;
-        max-width: 30%;
-
+    @include media("<=large") {
+        min-width: 32%;
+        max-width: 32%;
+        margin-right: 0;
     }
 
     @include media("<=medium") {
@@ -34,6 +34,7 @@
     @include media("<=small") {
         min-width: 100%;
         max-width: 100%;
+        padding: 1rem 2.7rem;
     }
 
     &:hover, &:active {
