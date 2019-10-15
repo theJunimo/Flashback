@@ -11,7 +11,14 @@ import { createLogger } from 'redux-logger';
 
 const logger = createLogger();
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleware));
+
+let store;
+if(process.env.NODE_ENV === 'production'){
+  store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleware));
+} else {
+  store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+}
+
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
