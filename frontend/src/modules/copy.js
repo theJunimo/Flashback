@@ -5,8 +5,8 @@ import createRequestSaga, {
 } from '../lib/createRequestSaga';
 import * as API from '../lib/api';
 
-const SHOW_MODAL = 'SHOW_MODAL';
-const CLOSE_MODAL = 'CLOSE_MODAL';
+const SHOW_COPY_MODAL = 'SHOW_COPY_MODAL';
+const CLOSE_COPY_MODAL = 'CLOSE_COPY_MODAL';
 
 const [
   INCREASE_COPY_CNT_ASYNC,
@@ -14,8 +14,8 @@ const [
   INCREASE_COPY_CNT_ASYNC_ERROR
 ] = createRequestActionTypes('INCREASE_COPY_CNT_ASYNC');
 
-export const showModal = createAction(SHOW_MODAL);
-export const closeModal = createAction(CLOSE_MODAL);
+export const showCopyModal = createAction(SHOW_COPY_MODAL);
+export const closeCopyModal = createAction(CLOSE_COPY_MODAL);
 
 export const increaseCopyCnt = createAction(
   INCREASE_COPY_CNT_ASYNC,
@@ -32,21 +32,21 @@ export function* copySaga() {
 }
 
 const initialState = {
-  modal: false,
+  copyModalVisible: false,
   msg: '',
   error: false
 };
 
 const copy = handleActions(
   {
-    [SHOW_MODAL]: (state, action) => ({
+    [SHOW_COPY_MODAL]: (state, action) => ({
       ...state,
-      modal: true,
+      copyModalVisible: true,
       msg: action.payload
     }),
-    [CLOSE_MODAL]: (state, action) => ({
+    [CLOSE_COPY_MODAL]: (state, action) => ({
       ...state,
-      modal: false,
+      copyModalVisible: false,
       msg: ''
     }),
     [INCREASE_COPY_CNT_ASYNC_SUCCESS]: (state, action) => ({
