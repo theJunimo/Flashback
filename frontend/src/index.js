@@ -7,17 +7,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer, { rootSaga } from './modules';
 import createSagaMiddleware from 'redux-saga';
-import { createLogger } from 'redux-logger';
 
-const logger = createLogger();
 const sagaMiddleware = createSagaMiddleware();
-
-let store;
-if(process.env.NODE_ENV === 'production'){
-  store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleware));
-} else {
-  store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-}
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 
