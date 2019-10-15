@@ -133,4 +133,4 @@ const AddEmtiModal = () => {
   );
 };
 
-export default AddEmtiModal;
+export default React.memo(AddEmtiModal);

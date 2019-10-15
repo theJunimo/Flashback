@@ -50,4 +50,4 @@ const TagList = ({ tagList }) => {
   );
 };
 
-export default TagList;
+export default React.memo(TagList);
