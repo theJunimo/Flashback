@@ -10,16 +10,31 @@ const cx = classNames.bind(styles);
 
 const Block = ({ handleModalVisibility, notice, data }) => {
   const dispatch = useDispatch();
-  
+
   const onCopy = useCallback(() => {
     const el = document.createElement('textarea');
     el.value = data.emoticon;
-    el.contentEditable = true;
-    el.readOnly = false;
     el.style.position = 'absolute';
     el.style.left = '-9999px';
     document.body.appendChild(el);
-    el.select();
+
+    // handle iOS as a special case
+    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+      const range = document.createRange();
+
+      el.contentEditable = true;
+      el.readOnly = false;
+      range.selectNodeContents(el);
+
+      const s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(range);
+
+      el.setSelectionRange(0, 999999); // A big number, to cover anything that could be inside the element.
+    } else {
+      el.select();
+    }
+
     document.execCommand('copy');
     document.body.removeChild(el);
 
