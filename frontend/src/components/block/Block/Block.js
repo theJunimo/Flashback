@@ -14,7 +14,8 @@ const Block = ({ handleModalVisibility, notice, data }) => {
   const onCopy = useCallback(() => {
     const el = document.createElement('textarea');
     el.value = data.emoticon;
-    el.setAttribute('readonly', '');
+    el.contentEditable = true;
+    el.readOnly = false;
     el.style.position = 'absolute';
     el.style.left = '-9999px';
     document.body.appendChild(el);
