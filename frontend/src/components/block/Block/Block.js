@@ -21,16 +21,16 @@ const Block = ({ handleModalVisibility, notice, data }) => {
     // handle iOS as a special case
     if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
       const range = document.createRange();
+      range.selectNodeContents(el);
 
       el.contentEditable = true;
       el.readOnly = false;
-      range.selectNodeContents(el);
 
       const s = window.getSelection();
       s.removeAllRanges();
       s.addRange(range);
 
-      el.setSelectionRange(0, 999999); // A big number, to cover anything that could be inside the element.
+      el.setSelectionRange(0, data.emoticon.length); // A big number, to cover anything that could be inside the element.
     } else {
       el.select();
     }
