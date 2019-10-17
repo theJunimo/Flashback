@@ -11,12 +11,11 @@ const cx = classNames.bind(styles);
 const Block = ({ handleModalVisibility, notice, data }) => {
   const dispatch = useDispatch();
 
-  const onCopy = useCallback(() => {
+  const onCopy = useCallback((e) => {
     const el = document.createElement('textarea');
     el.value = data.emoticon;
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
+    el.style.opacity = '0';
+    e.target.appendChild(el);
 
     // handle iOS as a special case
     if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
@@ -30,13 +29,13 @@ const Block = ({ handleModalVisibility, notice, data }) => {
       s.removeAllRanges();
       s.addRange(range);
 
-      el.setSelectionRange(0, data.emoticon.length); // A big number, to cover anything that could be inside the element.
+      el.setSelectionRange(0, data.emoticon.length);
     } else {
       el.select();
     }
-
+    
     document.execCommand('copy');
-    document.body.removeChild(el);
+    e.target.removeChild(el);
 
     //copy modal보이기
     handleModalVisibility();
@@ -45,7 +44,7 @@ const Block = ({ handleModalVisibility, notice, data }) => {
   }, [dispatch, data, handleModalVisibility]);
 
   return (
-    <li className={cx('Block')} onClick={onCopy}>
+    <li className={cx('Block')} onClick={(e) => onCopy(e)}>
       {notice && <NoticeMark>{notice}</NoticeMark>}
       <header className={cx('emoticon')}>
         <span>{data.emoticon}</span>
