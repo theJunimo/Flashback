@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import TagList from 'components/block/TagList';
 import NoticeMark from 'components/block/NoticeMark';
 import { useDispatch } from 'react-redux';
-import { increaseCopyCnt } from 'modules/copy';
+import { increaseCopyCnt, showCopyModal } from 'modules/copy';
 
 const cx = classNames.bind(styles);
 
@@ -38,10 +38,10 @@ const Block = ({ handleModalVisibility, notice, data }) => {
     e.target.removeChild(el);
 
     //copy modal보이기
-    handleModalVisibility();
+    dispatch(showCopyModal());
     //copyCount올리는 API
     dispatch(increaseCopyCnt(data.id));
-  }, [dispatch, data, handleModalVisibility]);
+  }, [dispatch, data, showCopyModal]);
 
   return (
     <li className={cx('Block')} onClick={(e) => handleCopy(e)}>

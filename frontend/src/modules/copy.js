@@ -42,7 +42,7 @@ const copy = handleActions(
     [SHOW_COPY_MODAL]: (state, action) => ({
       ...state,
       copyModalVisible: true,
-      msg: action.payload
+      msg: '복사완료! ٩( ᐛ )و'
     }),
     [CLOSE_COPY_MODAL]: (state, action) => ({
       ...state,
