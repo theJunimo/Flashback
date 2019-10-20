@@ -10,7 +10,7 @@ const CopyModal = () => {
   const dispatch = useDispatch();
   const msg = useSelector(({copy}) => copy.msg);
 
-  const onClose = useCallback(() => {
+  const handleClose = useCallback(() => {
     dispatch(closeCopyModal());
   }, [dispatch]); 
 
@@ -21,7 +21,7 @@ const CopyModal = () => {
   return (
     <div className={cx('CopyModal movedown')}>
       { msg }
-      <div className={cx('close')} onClick={() => onClose()} />
+      <div className={cx('close')} onClick={ handleClose } />
     </div>
   );
 };

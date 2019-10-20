@@ -9,13 +9,13 @@ const cx = classNames.bind(styles);
 const Header = () => {
   const dispatch = useDispatch();
 
-  const onClick = useCallback(() => {
+  const handleClick = useCallback(() => {
     dispatch(getAllEmoticons());
   }, [dispatch]);
 
   return (
     <header className={cx('Header')}>
-      <div className={cx('wrapper')} onClick={ onClick }>
+      <div className={cx('wrapper')} onClick={ handleClick }>
         <h1>I'mticon</h1>
       </div>
       <SearchBox />

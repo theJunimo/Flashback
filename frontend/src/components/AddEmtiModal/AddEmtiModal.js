@@ -12,7 +12,7 @@ const AddEmtiModal = () => {
   const tagEl = useRef(null);
   const dispatch = useDispatch();
 
-  const handleCloseAddModal = useCallback(() => {
+  const handleAddModalClose = useCallback(() => {
     dispatch(closeAddModal());
   }, [dispatch]);
 
@@ -30,7 +30,7 @@ const AddEmtiModal = () => {
     }
   }, []);
 
-  const handleAddTag = useCallback(() => {
+  const handleTagAdd = useCallback(() => {
     if (tags.length === 6) return false;
     const tag = tagEl.current.value;
     if (tag) {
@@ -39,7 +39,7 @@ const AddEmtiModal = () => {
     }
   }, [tags]);
 
-  const handleDeleteTag = useCallback(
+  const handleTagDelete = useCallback(
     targetIdx => {
       const filteredTags = tags.filter((el, idx) => idx !== targetIdx);
       setTags(filteredTags);
@@ -64,7 +64,7 @@ const AddEmtiModal = () => {
     return (
       <li key={idx} style={{ backgroundColor: colors[idx] }}>
         <span className={cx('tagName')}># {tagName}</span>
-        <span className={cx('deleteIcon')} onClick={() => handleDeleteTag(idx)}>
+        <span className={cx('deleteIcon')} onClick={() => handleTagDelete(idx)}>
           &times;
         </span>
       </li>
@@ -76,7 +76,7 @@ const AddEmtiModal = () => {
       const { keyCode } = e;
 
       if (keyCode === 13) {
-        handleAddTag();
+        handleTagAdd();
       }
     };
 
@@ -86,7 +86,7 @@ const AddEmtiModal = () => {
     return () => {
       copiedEl.removeEventListener('keydown', handleUserKeyPress);
     };
-  }, [handleAddTag]);
+  }, [handleTagAdd]);
 
   return (
     <div className={cx('modal-background')}>
@@ -108,7 +108,7 @@ const AddEmtiModal = () => {
               ref={tagEl}
               onChange={handleTags}
             />
-            <div className={cx('tagAddBtn')} onClick={handleAddTag}>
+            <div className={cx('tagAddBtn')} onClick={handleTagAdd}>
               태그 추가
             </div>
           </div>
@@ -123,7 +123,7 @@ const AddEmtiModal = () => {
             <div className={cx('btn confirm')} onClick={handleSubmit}>
               확인
             </div>
-            <div className={cx('btn cancel')} onClick={handleCloseAddModal}>
+            <div className={cx('btn cancel')} onClick={handleAddModalClose}>
               취소
             </div>
           </div>

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 const TagList = ({ tagList }) => {
   const dispatch = useDispatch();
   
-  const onSearch = useCallback((tagName) => {
+  const handleSearch = useCallback((tagName) => {
     dispatch(getEmoticonsByTag(tagName));
   }, [dispatch]);
 
@@ -35,7 +35,7 @@ const TagList = ({ tagList }) => {
         style={style}
         onClick={(e) => {
           e.stopPropagation();
-          onSearch(tagName)
+          handleSearch(tagName)
         }}
       >
         #{tagName}

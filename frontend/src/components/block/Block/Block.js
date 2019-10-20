@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 const Block = ({ handleModalVisibility, notice, data }) => {
   const dispatch = useDispatch();
 
-  const onCopy = useCallback((e) => {
+  const handleCopy = useCallback((e) => {
     const el = document.createElement('textarea');
     el.value = data.emoticon;
     el.style.opacity = '0';
@@ -44,7 +44,7 @@ const Block = ({ handleModalVisibility, notice, data }) => {
   }, [dispatch, data, handleModalVisibility]);
 
   return (
-    <li className={cx('Block')} onClick={(e) => onCopy(e)}>
+    <li className={cx('Block')} onClick={(e) => handleCopy(e)}>
       {notice && <NoticeMark>{notice}</NoticeMark>}
       <header className={cx('emoticon')}>
         <span>{data.emoticon}</span>

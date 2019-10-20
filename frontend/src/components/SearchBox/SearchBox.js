@@ -11,7 +11,7 @@ const SearchBox = () => {
   const [keyword, setKeyword] = useState('');
   const dispatch = useDispatch();
 
-  const onSearch = useCallback(
+  const handleSearch = useCallback(
     () => {
       if(keyword){
         dispatch(getEmoticonsByTag(keyword));
@@ -27,7 +27,7 @@ const SearchBox = () => {
       const { keyCode } = e;
 
       if (keyCode === 13 && keyword) {
-        onSearch();
+        handleSearch();
       }
     };
     const copiedEl = searchBoxEl.current;
@@ -36,7 +36,7 @@ const SearchBox = () => {
     return () => {
       copiedEl.removeEventListener('keydown', handleUserKeyPress);
     };
-  }, [onSearch, keyword]);
+  }, [handleSearch, keyword]);
 
   return (
     <div className={cx('SearchBox')}>
@@ -46,7 +46,7 @@ const SearchBox = () => {
         onChange={() => setKeyword(searchBoxEl.current.value)}
       />
       <div className={cx('search-btn')}>
-        <div className={cx('search-icon')} onClick={ onSearch }>
+        <div className={cx('search-icon')} onClick={ handleSearch }>
           <svg
             focusable="false"
             xmlns="http://www.w3.org/2000/svg"
